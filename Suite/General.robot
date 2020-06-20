@@ -19,3 +19,9 @@ User Search The Product
      \  Search The Product  ${PRODUCT}
      \  Click The Product Link
      Close Browser
+User Select The Language Settings
+    User Loaded Page
+    Select Language Settings
+    Close Browser
+    
+    
