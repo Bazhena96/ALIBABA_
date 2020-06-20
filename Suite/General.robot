@@ -13,8 +13,9 @@ User Sign Into Account
     Close Browser
 User Search The Product
     User Loaded Page
-    Search The Product
-    Verify That Search Loaded
-    Close Browser
-User Select One Of The Results
-    
+    Search Settings
+    @{PRODUCTS}  Create list  Nintendo  Nintendo switch  Nintendo case 
+    FOR  ${PRODUCT}  IN  @{PRODUCTS}
+     \  Search The Product  ${PRODUCT}
+     \  Click The Product Link
+     Close Browser
