@@ -34,3 +34,8 @@ Click The Product Link
 Select Language Settings
     Wait Until Page Contains Element  css=.ui-beacon-translate
     Mouse Down  css=.ui-beacon-translate
+Supplier Service
+    Wait Until Page Contains Element  css=li.ui-beacon-item:nth-child(2)
+    Mouse Down  css=li.ui-beacon-item:nth-child(2)
+    
+    
