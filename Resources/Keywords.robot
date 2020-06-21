@@ -17,9 +17,9 @@ Sign Into account
     Run Keyword if  ${FACEBOOK_COUNTS}>0  Sign In With Facebook   ELSE IF  ${GOOGLEBUTTONS_COUNT}>0  Sign In With Google  ELSE  Sign In
 Search The Product
     [Arguments]  ${PRODUCT}
-    Wait Until Page Contains Element  css=.ui-searchbar-keyword
-    Input Text  css=.ui-searchbar-keyword   ${PRODUCT}
-    Press Keys  css=.ui-searchbar-keyword  ENTER
+    Given Wait Until Page Contains Element  css=.ui-searchbar-keyword
+    When Input Text  css=.ui-searchbar-keyword   ${PRODUCT}
+    Then Press Keys  css=.ui-searchbar-keyword  ENTER
 User Select One Of The Results
     Wait Until Page Contains Element  css=#product-1 > div:nth-child(2) > h2:nth-child(1) > a:nth-child(2)
     Click Element  css=#product-1 > div:nth-child(2) > h2:nth-child(1) > a:nth-child(2)

@@ -5,12 +5,12 @@ Resource  ../Resources/BaseKeywords.robot
 
 ***Test Cases***
 User Loaded Page
-    User Loaded Page
-    Close Browser
+    When User Loaded Page
+    Then Close Browser
 User Sign Into Account
-    User Loaded Page
-    Sign Into account
-    Close Browser
+    Given User Loaded Page
+    When Sign Into account
+    Then Close Browser
 User Search The Product
     User Loaded Page
     Search Settings
@@ -20,9 +20,9 @@ User Search The Product
      \  Click The Product Link
      Close Browser
 User Select The Language Settings
-    User Loaded Page
-    Select Language Settings
-    Close Browser
+   Given User Loaded Page
+   When Select Language Settings
+   Then Close Browser
 User Contact With Supplier
     User Loaded Page
     Supplier Service
