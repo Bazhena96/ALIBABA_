@@ -23,5 +23,8 @@ User Select The Language Settings
     User Loaded Page
     Select Language Settings
     Close Browser
-    
+User Contact With Supplier
+    User Loaded Page
+    Supplier Service
+    Close Browser
     
