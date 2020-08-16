@@ -1,24 +1,24 @@
-***Settings***
+*** Settings ***
 Library  SeleniumLibrary
 Resource  Variables.robot
 Resource  BaseKeywords.robot
-***Keywords***
+*** Keywords ***
 User Loaded Page
     Open and Load
     Dismiss Alert
 Dismiss Alert
-    ${BUTTON_COUNTS}  GET ELEMENT COUNT  css=.lp-panel-dialog
-    Run Keyword if  ${BUTTON_COUNTS}>0  Close Alert 
-Sign Into account
+    ${button count}  GET ELEMENT COUNT  css=.lp-panel-dialog
+    Run Keyword if  ${button count}>0  Close Alert
+Sign Into Account
     Wait Until Page Contains Element  css=.ui-beacon-user > a:nth-child(1)
     Click Element  css=.ui-beacon-user > a:nth-child(1)
-    ${FACEBOOK_COUNTS}  GET ELEMENT COUNT  css=a.thirdpart-login-icon:nth-child(1)
-    ${GOOGLEBUTTONS_COUNT}  GET ELEMENT COUNT  css=a.thirdpart-login-icon:nth-child(2)
-    Run Keyword if  ${FACEBOOK_COUNTS}>0  Sign In With Facebook   ELSE IF  ${GOOGLEBUTTONS_COUNT}>0  Sign In With Google  ELSE  Sign In
+    ${facebook count}  GET ELEMENT COUNT  css=a.thirdpart-login-icon:nth-child(1)
+    ${google count}  GET ELEMENT COUNT  css=a.thirdpart-login-icon:nth-child(2)
+    Run Keyword if  ${facebook count}>0  Sign In With Facebook   ELSE IF  ${google count}>0  Sign In With Google  ELSE  Sign In
 Search The Product
-    [Arguments]  ${PRODUCT}
+    [Arguments]  ${product}
     Wait Until Page Contains Element  css=.ui-searchbar-keyword
-    Input Text  css=.ui-searchbar-keyword   ${PRODUCT}
+    Input Text  css=.ui-searchbar-keyword   ${product}
     Press Keys  css=.ui-searchbar-keyword  ENTER
 User Select One Of The Results
     Wait Until Page Contains Element  css=#product-1 > div:nth-child(2) > h2:nth-child(1) > a:nth-child(2)
