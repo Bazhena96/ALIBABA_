@@ -1,29 +1,30 @@
-***Settings***
+*** Settings ***
 Library  SeleniumLibrary
 Resource  ../Resources/Keywords.robot
 Resource  ../Resources/BaseKeywords.robot
 
-***Test Cases***
-User Loaded Page
+*** Test Cases ***
+User loaded page
     User Loaded Page
     Close Browser
-User Sign Into Account
+User sign in to account
     User Loaded Page
     Sign Into account
     Close Browser
-User Search The Product
+User search the product
     User Loaded Page
     Search Settings
-    @{PRODUCTS}  Create list  Nintendo  Nintendo switch  Nintendo case 
-    FOR  ${PRODUCT}  IN  @{PRODUCTS}
-     \  Search The Product  ${PRODUCT}
-     \  Click The Product Link
+    @{products}  Create list  Nintendo  Nintendo switch  Nintendo case
+    FOR  ${product}  IN  @{products}
+       Search The Product  ${product}
+       Click The Product Link
+     END
      Close Browser
-User Select The Language Settings
+User select the language settings
     User Loaded Page
     Select Language Settings
     Close Browser
-User Contact With Supplier
+User contact with supplier
     User Loaded Page
     Supplier Service
     Close Browser
