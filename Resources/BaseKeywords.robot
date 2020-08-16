@@ -1,6 +1,5 @@
 *** Settings ***
 Library   SeleniumLibrary
-Resource  Variables.robot
 Resource  Keywords.robot
 *** Keywords ***
 Wait And Click
@@ -13,10 +12,11 @@ Open and Load
 Close Alert
     Wait And Click  css=body > div.ui-window.ui-window-normal.ui-window-transition > a
 Sign In
+    [Arguments]  ${user email}  ${user password}
     Wait Until PAge Contains Element  css=#fm-login-id
-    Input Text  css=#fm-login-id  ${USER_EMAIL}
+    Input Text  css=#fm-login-id  ${user email}
     Wait Until Page contains Element  css=#fm-login-password
-    Input password  css=#fm-login-password  ${USER_PASSWORD}
+    Input password  css=#fm-login-password  ${user password}
     Wait And Click  css=#fm-login-submit
 Sign In With Google
     Wait And Click  css=a.thirdpart-login-icon:nth-child(2)
