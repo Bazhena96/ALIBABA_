@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  Variables.robot
 Resource  BaseKeywords.robot
 *** Keywords ***
 User Loaded Page
@@ -13,7 +12,7 @@ Sign Into Account
     Wait And Click  css=.ui-beacon-user > a:nth-child(1)
     ${facebook count}  GET ELEMENT COUNT  css=a.thirdpart-login-icon:nth-child(1)
     ${google count}  GET ELEMENT COUNT  css=a.thirdpart-login-icon:nth-child(2)
-    Run Keyword if  ${facebook count}>0  Sign In With Facebook   ELSE IF  ${google count}>0  Sign In With Google  ELSE  Sign In
+    Run Keyword if  ${facebook count}>0  Sign In With Facebook   ELSE IF  ${google count}>0  Sign In With Google  ELSE  Sign In  bazhenkak@gmail.com  123456789
 Search The Product
     [Arguments]  ${product}
     Wait Until Page Contains Element  css=.ui-searchbar-keyword
