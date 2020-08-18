@@ -6,7 +6,7 @@ User Load Page
     Open and Load
     Dismiss Alert
 Load Page And Maximize Browser Window
-      User Loaded Page
+      User Load Page
       Maximize Browser Window
 Dismiss Alert
     ${button count}  GET ELEMENT COUNT  css=.lp-panel-dialog
