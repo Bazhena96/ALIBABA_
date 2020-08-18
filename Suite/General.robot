@@ -4,15 +4,15 @@ Resource  ../Resources/Keywords.robot
 Resource  ../Resources/BaseKeywords.robot
 
 *** Test Cases ***
-User loaded page
-    User Loaded Page
+User load page
+    Load Page And Maximize Browser Window
     Close Browser
 User sign in to account
-    User Loaded Page
-    Sign Into account
+    Load Page And Maximize Browser Window
+    Sign In to account
     Close Browser
 User search the product
-    User Loaded Page
+    Load Page And Maximize Browser Window
     Search Settings
     @{products}  Create list  Nintendo  Nintendo switch  Nintendo case
     FOR  ${product}  IN  @{products}
@@ -21,11 +21,11 @@ User search the product
      END
      Close Browser
 User select the language settings
-    User Loaded Page
+    Load Page And Maximize Browser Window
     Select Language Settings
     Close Browser
 User contact with supplier
-    User Loaded Page
+    Load Page And Maximize Browser Window
     Supplier Service
     Close Browser
     
