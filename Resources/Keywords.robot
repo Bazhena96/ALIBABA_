@@ -2,13 +2,16 @@
 Library  SeleniumLibrary
 Resource  BaseKeywords.robot
 *** Keywords ***
-User Loaded Page
+User Load Page
     Open and Load
     Dismiss Alert
+Load Page And Maximize Browser Window
+      User Loaded Page
+      Maximize Browser Window
 Dismiss Alert
     ${button count}  GET ELEMENT COUNT  css=.lp-panel-dialog
     Run Keyword if  ${button count}>0  Close Alert
-Sign Into Account
+Sign In to Account
     Wait And Click  css=.ui-beacon-user > a:nth-child(1)
     ${facebook count}  GET ELEMENT COUNT  css=a.thirdpart-login-icon:nth-child(1)
     ${google count}  GET ELEMENT COUNT  css=a.thirdpart-login-icon:nth-child(2)
