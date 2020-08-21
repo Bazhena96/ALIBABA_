@@ -2,7 +2,6 @@
 Library  SeleniumLibrary
 Resource  ../Resources/Keywords.robot
 Resource  ../Resources/BaseKeywords.robot
-
 *** Test Cases ***
 User load page
     Load Page And Maximize Browser Window
@@ -18,8 +17,8 @@ User search the product
     FOR  ${product}  IN  @{products}
        Search The Product  ${product}
        Click The Product Link
-     END
-     Close Browser
+    END
+    Close Browser
 User select the language settings
     Load Page And Maximize Browser Window
     Select Language Settings
